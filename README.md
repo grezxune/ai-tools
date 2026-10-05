@@ -143,7 +143,7 @@ AGENTS.md                  rules for working on this repo
 
 Our own files are MIT licensed. See [LICENSE](LICENSE).
 
-The vendored skills keep their upstream licenses:
+The skills listed in [`skills/SOURCES`](skills/SOURCES) come from other projects and keep their upstream licenses:
 
 | Skill | Author | License |
 |---|---|---|
