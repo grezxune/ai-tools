@@ -1,0 +1,9 @@
+# Vendored skills. scripts/update-skills.sh re-pulls each one at its upstream HEAD
+# and rewrites the commit column. Vendored folders match upstream byte for byte,
+# so keep local rules in the other skills.
+# name               repo                                 path                                               commit
+pr                   mattpocock/skills                    skills/engineering/pr                              4588b32
+retro                mattpocock/skills                    skills/engineering/retro                           4588b32
+writing-for-agents   mattpocock/skills                    skills/productivity/writing-for-agents             4588b32
+unslop               cursor/plugins                       pstack/skills/unslop                               e5a8186
+frontend-design      anthropics/claude-plugins-official   plugins/frontend-design/skills/frontend-design     d4226d0

@@ -1,0 +1,5 @@
+interface:
+  display_name: "Setup Hosting"
+  short_description: "GitHub repo, Vercel project, env vars, production deploy"
+policy:
+  allow_implicit_invocation: false
