@@ -9,6 +9,5 @@ For anything I read (replies, docs, PR bodies, UI copy): plain words, active voi
 ## Git
 
 - Conventional Commits: `feat:`, `fix:`, `chore:`, `refactor:`.
-- Never mention Claude, Codex, or any AI assistant in commit messages, PR descriptions, or code comments.
 - Branch as `feature/{name}` unless the repo says otherwise. Squash before merging.
 - Update `CHANGELOG.md` for meaningful changes.
