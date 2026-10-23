@@ -2,7 +2,7 @@
 
 # ai-tools
 
-The rules and skills our coding agents load at Grez Studios. One set of files serves both Claude Code and Codex, and it is built to stay small: about 440 tokens sit in context when a session starts, and everything else loads when a task needs it.
+The rules and skills our coding agents load at Grez Studios. One set of files serves both Claude Code and Codex, and it is built to stay small: about 500 tokens sit in context when a session starts, and everything else loads when a task needs it.
 
 Install the whole setup, or copy a single skill folder.
 
@@ -12,7 +12,7 @@ An agent pays for every line it loads at startup on every turn, in every repo, w
 
 | Tier | What it holds | Cost at rest |
 |---|---|---|
-| Always loaded | [`rules/AGENTS.md`](rules/AGENTS.md): writing and git rules, 14 lines | about 180 tokens |
+| Always loaded | [`rules/AGENTS.md`](rules/AGENTS.md): writing, UI, and git rules, 18 lines | about 240 tokens |
 | Loaded on demand | Eight skills. The agent sees one description line for each and reads the body when a task matches | about 260 tokens for all eight |
 | Loaded when typed | Three skills that run only when you call them, such as `/retro` | none |
 
@@ -27,7 +27,7 @@ Two more choices keep it that way:
 
 ### Rules
 
-[`rules/AGENTS.md`](rules/AGENTS.md) is the global file. It says that a repo's own `AGENTS.md` wins, how to write prose a person will read, and how to commit.
+[`rules/AGENTS.md`](rules/AGENTS.md) is the global file. It says that a repo's own `AGENTS.md` wins, how to write prose a person will read, that every app's UI is built from its own component library, and how to commit.
 
 ### Skills
 
