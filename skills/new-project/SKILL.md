@@ -15,6 +15,7 @@ Paths that start with `../` are relative to this skill's folder.
 - `CLAUDE.md`: the single line `@AGENTS.md`, so Claude Code loads the same rules.
 - `prds/README.md`: the body of `../prd/SKILL.md`, so contributors have the PRD template.
 - `DESIGN.md` and `design/`, when the project has UI. Follow `../design-plan/SKILL.md`.
+- The component library, when the project has UI: `src/components/ui/`, the `/dev/ui` gallery with its coverage test, and the lint rule. The UI section of `../standards/SKILL.md` describes all three.
 - `docs/convex.md`: the body of `../convex/SKILL.md`, when the project uses Convex.
 - `CHANGELOG.md` with an empty `## Unreleased` section.
 
@@ -64,10 +65,12 @@ Read the project's current `CLAUDE.md`, `AGENTS.md`, `CONTRIBUTING.md`, `README.
 - Create the files that are still missing.
 - When a project rule conflicts with one of my rules, ask me which one wins. If a rewording lets both hold, use it and tell me.
 - Next.js 16 `next dev` keeps a managed block at the end of `AGENTS.md`. Leave it there.
+- When screens carry their own styling, moving them onto a component library touches most of the UI. Propose it as its own change and ask before starting.
 - Follow the project's own change process (branch, gate, changelog) for this change too.
 
 ## Done when
 
 - Every rule in `../standards/SKILL.md` and the Git section of my global rules has a line in the project's `AGENTS.md`, or does not apply to this project.
 - Nothing in the project's agent files points outside the repo or says "me".
+- For a project with UI, `/dev/ui` loads in development and its coverage test passes.
 - For an existing project, every project-specific rule from the old files still has a home.

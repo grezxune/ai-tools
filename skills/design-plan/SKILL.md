@@ -24,7 +24,7 @@ Create a `design/` subfolder when its first file arrives.
 ## Single source
 
 - Token values live in `globals.css`. `DESIGN.md` names each token and says when to use it.
-- Component specs live in the component code. `DESIGN.md` lists each shared component with its path.
+- Component specs live in the component library, and `/dev/ui` draws each one. `DESIGN.md` lists each shared component with its path.
 - Every file under `design/` gets one line in the Artifacts section saying what to take from it. Open an artifact only when the task needs it.
 
 ## Writing DESIGN.md
