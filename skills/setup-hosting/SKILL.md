@@ -168,7 +168,7 @@ echo "<value>" | vercel env add <VAR_NAME> production
 | Category | Example | Notes |
 |----------|---------|-------|
 | Public build vars | `NEXT_PUBLIC_*` | Needed at build time, safe to expose |
-| Server secrets | `AUTH_SECRET`, API keys | Production only, never expose |
+| Server secrets | `BETTER_AUTH_SECRET`, API keys | Production only, never expose |
 | Service URLs | `NEXT_PUBLIC_CONVEX_URL` | Usually same across environments |
 | Payment keys | `STRIPE_*` | Use test keys for preview, live for production |
 
@@ -258,10 +258,10 @@ After successful deployment:
    - For subdomain: CNAME → `cname.vercel-dns.com`
 
 3. **Remind user about:**
-   - Auth callback URLs — Google OAuth, Auth.js etc. need the production URL added as an authorized redirect
+   - Auth callback URLs. Google OAuth and other sign-in providers need the production URL added as an authorized redirect, such as `https://<domain>/api/auth/callback/google`
    - Webhook URLs — Stripe, payment providers need the production URL
    - CORS settings — if using external APIs that whitelist origins
-   - `AUTH_URL` or `NEXTAUTH_URL` env var may need to be set to the production URL
+   - The auth base URL must be the production URL: `SITE_URL` in the Convex deployment, or `BETTER_AUTH_URL` in an app without Convex
 
 ---
 
@@ -288,10 +288,10 @@ After successful deployment:
 - Server-only vars are available at **runtime** — they work even if added after the build
 - If a `NEXT_PUBLIC_` var changes, you must **redeploy** for the change to take effect
 
-### Auth.js on Vercel
-- `AUTH_SECRET` must be set — Auth.js won't work without it in production
-- `AUTH_URL` / `NEXTAUTH_URL` is auto-detected on Vercel from `VERCEL_URL`, but it's safer to set it explicitly to your custom domain
-- Google OAuth requires the production URL in the authorized redirect URIs in Google Cloud Console
+### Better Auth on Vercel
+- Google OAuth requires `https://<domain>/api/auth/callback/google` in the authorized redirect URIs in Google Cloud Console.
+- With Convex, the auth instance runs in Convex. `BETTER_AUTH_SECRET`, `SITE_URL` (the production URL), and the OAuth credentials go in the production Convex deployment's environment, through the dashboard or `npx convex env set`. Vercel holds `NEXT_PUBLIC_CONVEX_URL`, `NEXT_PUBLIC_CONVEX_SITE_URL`, and `NEXT_PUBLIC_SITE_URL`.
+- Without Convex, the auth instance runs in Next.js, and Vercel holds `BETTER_AUTH_SECRET` (Better Auth also reads `AUTH_SECRET`) and `BETTER_AUTH_URL`, set to the custom domain. An app that answers on several domains or on preview URLs sets `baseURL: { allowedHosts: [...] }` in its auth config instead of `BETTER_AUTH_URL`.
 
 ### Framework detection
 - Vercel auto-detects Next.js, Vite, Remix, etc. from `package.json`
