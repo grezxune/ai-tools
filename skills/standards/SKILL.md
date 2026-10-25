@@ -13,7 +13,7 @@ My defaults for web apps. A repo's own `AGENTS.md` replaces them.
 - Next.js App Router only. Never create a `pages/` directory.
 - Server components by default. Client components only where interactivity requires it.
 - Give each entity state its own route: `create/`, `[id]/`, `[id]/update/`, `[id]/manage/`. Do not multiplex those states inside one route.
-- Auth.js for auth, Google as the initial provider. Convex for data and file storage. Stripe for payments, server-side only, Connect for multi-party payouts. Resend for email.
+- Convex for data and file storage. Better Auth for auth, Google as the initial provider, joined to Convex through the `@convex-dev/better-auth` component. It replaced Auth.js, which gets only security fixes since September 2025. Stripe for payments, server-side only, Connect for multi-party payouts. Resend for email.
 
 ## Code
 
