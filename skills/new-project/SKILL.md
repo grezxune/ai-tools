@@ -72,5 +72,5 @@ Read the project's current `CLAUDE.md`, `AGENTS.md`, `CONTRIBUTING.md`, `README.
 
 - Every rule in `../standards/SKILL.md` and the Git section of my global rules has a line in the project's `AGENTS.md`, or does not apply to this project.
 - Nothing in the project's agent files points outside the repo or says "me".
-- For a project with UI, `/dev/ui` loads in development and its coverage test passes.
+- For a project with UI, `/dev/ui` loads in development and its coverage test passes. Scrolled to the bottom, its sidebar and header are still in place.
 - For an existing project, every project-specific rule from the old files still has a home.

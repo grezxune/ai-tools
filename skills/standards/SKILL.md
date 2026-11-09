@@ -32,11 +32,19 @@ Every app is built from its own component library, so a change to one component 
 - A missing piece becomes a new primitive or a new variant of one. A pattern that shows up twice becomes a primitive, and both uses move onto it.
 - `/dev/ui` demos every shared component in each of its states, the way screens use it, and is a 404 outside development. A test fails when a component has no demo. A component and its demo change in the same commit.
 - Tokens for color, type, spacing, radius, shadow, and motion live in `globals.css`. The repo's `DESIGN.md`, or `UxStyle.md` in an older repo, sets the direction and names the tokens.
+- Every other rule in `globals.css` sits in a Tailwind layer: `@layer base` for element selectors such as `body > *`, `@layer components` for helper classes. A primitive's utility classes then always win. Unlayered CSS beats every layer, whatever its specificity.
 - Support dark and light themes.
 - Never use a scroll indicator, animated dots, or "scroll" hint text.
-- Never allow horizontal page scroll. Constrain layouts and set `overflow-x: hidden` at the root.
 - Never use Tailwind's `!` important modifier. Fix the layout or hierarchy instead.
 - Never use `alert()`, `confirm()`, or `prompt()`. Use the project's branded modal.
+
+### Shell and scrolling
+
+- The window scrolls the page, so `sticky` elements stick to the window.
+- A sidebar is `sticky top-0 h-dvh` beside the main column. It fills the window's height and stays in place as the page scrolls. Its nav scrolls inside it when it runs long, and its footer stays pinned to the bottom.
+- A header is `sticky top-0`. A sidebar under a header sticks just below it and fills the rest of the window's height.
+- The page stays inside the window's width: layouts constrain themselves, and a wide table scrolls inside its own frame. Set `overflow-x: hidden` on `html` and `overflow-x: clip` on `body`. `hidden` on `body` makes the body its own scroll container, and every sticky element scrolls away with the page.
+- `/dev/ui` draws inside the app shell, so the gallery is itself a page taller than the window. After changing the shell or `globals.css`, scroll it and check that the sidebar and header stay in place.
 
 ## Security
 
