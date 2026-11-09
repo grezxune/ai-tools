@@ -253,7 +253,7 @@ After successful deployment:
    ```bash
    vercel domains add <domain>
    ```
-   Then instruct user to update DNS:
+   Then offer to point the domain's nameservers at Vercel, so its DNS records are managed through the Vercel API. `vercel domains inspect <domain>` lists the nameservers to set at the registrar. If the user keeps DNS at the registrar, have them add:
    - For apex domain: A record → `76.76.21.21`
    - For subdomain: CNAME → `cname.vercel-dns.com`
 

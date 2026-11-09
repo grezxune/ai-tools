@@ -10,6 +10,10 @@ For anything I read (replies, docs, PR bodies, UI copy): plain words, active voi
 
 Build every app's UI from its own component library: styles live only in `src/components/ui/`, screens compose those components with no `className` or `style`, and `/dev/ui` shows every one. The `standards` skill has the full setup.
 
+## Domains
+
+When a project gets a domain, offer to point its nameservers at Vercel so its DNS records are managed through the Vercel API. Ask every time, and keep DNS at the registrar when I say no.
+
 ## Git
 
 - Conventional Commits: `feat:`, `fix:`, `chore:`, `refactor:`.
