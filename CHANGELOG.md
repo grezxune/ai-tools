@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- `aws-kit` skill, vendored from the public aws-kit repo. Agents use it to create AWS accounts and deploy any AWS resource for a project through the aws-kit CLI.
 - `standards` keeps sticky sidebars and headers in place: the window scrolls the page, `body` clips with `overflow-x: clip` instead of `hidden`, and every other rule in `globals.css` sits in a Tailwind layer. `new-project` checks that `/dev/ui` keeps its sidebar and header when scrolled.
 - The global rules offer to move a new domain's nameservers to Vercel, so its DNS is managed through the Vercel API. It is an offer, never a requirement. `setup-hosting` makes the same offer before falling back to A and CNAME records.
 - `standards` recommends Better Auth instead of Auth.js, which gets only security fixes since September 2025. `setup-hosting` says which Better Auth variables go in Convex and which in Vercel, and the Google callback address.

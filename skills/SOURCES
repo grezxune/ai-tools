@@ -7,3 +7,4 @@ retro                mattpocock/skills                    skills/engineering/ret
 writing-for-agents   mattpocock/skills                    skills/productivity/writing-for-agents             4588b32
 unslop               cursor/plugins                       pstack/skills/unslop                               e5a8186
 frontend-design      anthropics/claude-plugins-official   plugins/frontend-design/skills/frontend-design     d4226d0
+aws-kit              grezxune/aws-kit                     skill                                              9ae762a

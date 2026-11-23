@@ -2,7 +2,7 @@
 
 # ai-tools
 
-The rules and skills our coding agents load at Grez Studios. One set of files serves both Claude Code and Codex, and it is built to stay small: about 500 tokens sit in context when a session starts, and everything else loads when a task needs it.
+The rules and skills our coding agents load at Grez Studios. One set of files serves both Claude Code and Codex, and it is built to stay small: about 550 tokens sit in context when a session starts, and everything else loads when a task needs it.
 
 Install the whole setup, or copy a single skill folder.
 
@@ -13,7 +13,7 @@ An agent pays for every line it loads at startup on every turn, in every repo, w
 | Tier | What it holds | Cost at rest |
 |---|---|---|
 | Always loaded | [`rules/AGENTS.md`](rules/AGENTS.md): writing, UI, and git rules, 18 lines | about 240 tokens |
-| Loaded on demand | Eight skills. The agent sees one description line for each and reads the body when a task matches | about 260 tokens for all eight |
+| Loaded on demand | Nine skills. The agent sees one description line for each and reads the body when a task matches | about 310 tokens for all nine |
 | Loaded when typed | Three skills that run only when you call them, such as `/retro` | none |
 
 Token counts are estimates at four characters per token.
@@ -44,6 +44,7 @@ Two more choices keep it that way:
 | [`writing-for-agents`](skills/writing-for-agents/SKILL.md) | Reference for writing skills and rules files | On its own | [mattpocock/skills](https://github.com/mattpocock/skills) |
 | [`unslop`](skills/unslop/SKILL.md) | Removes AI tells from a piece of writing | `/unslop` | [pstack](https://github.com/cursor/plugins/tree/main/pstack) |
 | [`frontend-design`](skills/frontend-design/SKILL.md) | Guidance for distinctive visual design | On its own | [claude-plugins-official](https://github.com/anthropics/claude-plugins-official) |
+| [`aws-kit`](skills/aws-kit/SKILL.md) | Creates AWS accounts and deploys any AWS resource for a project through the aws-kit CLI | On its own | [aws-kit](https://github.com/grezxune/aws-kit) |
 
 "On its own" means the agent decides from the description. A slash name means the skill runs only when you type it. In Codex the prefix is `$`, as in `$retro`, and `unslop` can also load on its own there because upstream ships no Codex policy file.
 
@@ -96,7 +97,7 @@ Each copy is a snapshot the project owns from then on. The skills here stay the 
 
 ## Update the vendored skills
 
-Five skills come from other repos. [`skills/SOURCES`](skills/SOURCES) lists each one with its upstream repo, path, and pinned commit.
+Six skills come from other repos. [`skills/SOURCES`](skills/SOURCES) lists each one with its upstream repo, path, and pinned commit.
 
 ```bash
 scripts/update-skills.sh
@@ -150,5 +151,6 @@ The skills listed in [`skills/SOURCES`](skills/SOURCES) come from other projects
 | `pr`, `retro`, `writing-for-agents` | [Matt Pocock](https://github.com/mattpocock/skills) | MIT, [licenses/mattpocock-skills.txt](licenses/mattpocock-skills.txt) |
 | `unslop` | [Lauren Tan](https://github.com/cursor/plugins/tree/main/pstack), from pstack | MIT, [licenses/pstack.txt](licenses/pstack.txt) |
 | `frontend-design` | [Anthropic](https://github.com/anthropics/claude-plugins-official) | Apache-2.0, [skills/frontend-design/LICENSE.txt](skills/frontend-design/LICENSE.txt) |
+| `aws-kit` | Grez Studios, from [aws-kit](https://github.com/grezxune/aws-kit) | MIT, the same as this repo |
 
 `pr` builds on Dex Horthy's `show-me` skill, credited in [skills/pr/CREDITS.md](skills/pr/CREDITS.md).
