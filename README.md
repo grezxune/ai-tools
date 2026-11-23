@@ -2,7 +2,7 @@
 
 # ai-tools
 
-The rules and skills our coding agents load at Grez Studios. One set of files serves both Claude Code and Codex, and it is built to stay small: about 550 tokens sit in context when a session starts, and everything else loads when a task needs it.
+The rules and skills our coding agents load at Grez Studios. One set of files serves both Claude Code and Codex, and it is built to stay small: about 570 tokens sit in context when a session starts, and everything else loads when a task needs it.
 
 Install the whole setup, or copy a single skill folder.
 
@@ -12,7 +12,7 @@ An agent pays for every line it loads at startup on every turn, in every repo, w
 
 | Tier | What it holds | Cost at rest |
 |---|---|---|
-| Always loaded | [`rules/AGENTS.md`](rules/AGENTS.md): writing, UI, and git rules, 18 lines | about 240 tokens |
+| Always loaded | [`rules/AGENTS.md`](rules/AGENTS.md): writing, UI, domain, AWS, and git rules, 25 lines | about 260 tokens |
 | Loaded on demand | Nine skills. The agent sees one description line for each and reads the body when a task matches | about 310 tokens for all nine |
 | Loaded when typed | Three skills that run only when you call them, such as `/retro` | none |
 

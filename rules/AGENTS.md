@@ -14,6 +14,10 @@ Build every app's UI from its own component library: styles live only in `src/co
 
 When a project gets a domain, offer to point its nameservers at Vercel so its DNS records are managed through the Vercel API. Ask every time, and keep DNS at the registrar when I say no.
 
+## AWS
+
+Change AWS only through the `aws-kit` skill and CLI. AWS's own skills and MCP server are for docs and reading.
+
 ## Git
 
 - Conventional Commits: `feat:`, `fix:`, `chore:`, `refactor:`.
